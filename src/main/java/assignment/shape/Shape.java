@@ -19,6 +19,7 @@ public class Shape
         Scanner sc = new Scanner(System.in);
         System.out.println("Which shape you want to calculate from below\n1.Circle\n2.Rectangle\n3.Triangle");
         ShapeName = sc.nextLine();
+	 try{
         switch (ShapeName) {
             case "Rectangle":
                 System.out.println("Enter Length");
@@ -52,6 +53,14 @@ public class Shape
                 break;
 
         }
+	sc.close();
+	    }
+	    catch(InputMismatchException e)
+	    {
+		    log.info(String.valueOf(e));
+		    System.exit(0);
+	    }
+	    
 
     }
 
