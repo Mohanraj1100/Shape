@@ -16,10 +16,10 @@ public class Shape
     String ShapeName;
 
     Shape() {
+	try{
         Scanner sc = new Scanner(System.in);
         System.out.println("Which shape you want to calculate from below\n1.Circle\n2.Rectangle\n3.Triangle");
         ShapeName = sc.nextLine();
-	 try{
         switch (ShapeName) {
             case "Rectangle":
                 System.out.println("Enter Length");
