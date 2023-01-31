@@ -28,13 +28,13 @@ public class Shape
                 breadth = sc.nextInt();
                 perimeterIs();
                 areaIs();
-                break;
 		}
 		catch(InputMismatchException e)
 		{
 			log.info(String.valueOf(e));
 			System.exit(0);
 		}
+		break;
 
             case 2:
                 log.info("Enter Base");
