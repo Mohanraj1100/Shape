@@ -12,14 +12,14 @@ public class Shape
     float radius;
     float perimeter;
     float area;
-    int shape;
+    int choice;
     Logger log = Logger.getLogger("hi");
 
     Shape() {
         Scanner sc = new Scanner(System.in);
         log.info("Which shape you want to calculate from below\n1.Rectangle\n2.Triangle\n3.Circle");
-        shape = sc.nextInt();
-        switch (shape) {
+        choice = sc.nextInt();
+        switch (choice) {
             case 1:
                 log.info("Enter Length");
                 length = sc.nextInt();
@@ -56,7 +56,7 @@ public class Shape
     }
 
     void perimeterIs() {
-        switch (shape) {
+        switch (choice) {
             case 1:
                 perimeter = 2 * (length + breadth);
                 log.fine("Permeter of Rectangle is {}" ,perimeter);
@@ -79,7 +79,7 @@ public class Shape
     }
 
     void areaIs() {
-        switch (shape) {
+        switch (choice) {
             case 1:
                 area = length * breadth;
                 log.fine("Area of Rectangle is {}",area);
@@ -100,9 +100,15 @@ public class Shape
             	break;
         }
     }
+	
+    void display()
+    {
+	    log.info("Hence area andn perimeter has been calculated");
+    }
 
     public static void main(String[] args) {
         Shape in = new Shape();
+	in.display();
 
     }
 }
