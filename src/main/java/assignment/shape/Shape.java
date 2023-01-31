@@ -4,7 +4,7 @@ import java.lang.*;
 import java.util.*;
 public class Shape
 {
-	int length;
+    int length;
     int breadth;
     int height;
     int width;
@@ -53,7 +53,7 @@ public class Shape
 
         }
 	sc.close();
-	   }
+    }
 
     void Perimeter() {
         switch (ShapeName) {
