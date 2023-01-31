@@ -11,13 +11,13 @@ public class Shape
     float side;
     float radius;
     float perimeter;
-    double area;
+    float area;
     int shape;
     Logger log = Logger.getLogger("hi");
 
     Shape() {
         Scanner sc = new Scanner(System.in);
-        log.info("Which shape you want to calculate from below\n1.Circle\n2.Rectangle\n3.Triangle");
+        log.info("Which shape you want to calculate from below\n1.Rectangle\n2.Triangle\n3.Circle");
         shape = sc.nextInt();
         switch (shape) {
             case 1:
@@ -25,8 +25,8 @@ public class Shape
                 length = sc.nextInt();
                 log.info("Enter Breadth");
                 breadth = sc.nextInt();
-                Perimeter();
-                Area();
+                perimeterIs();
+                areaIs();
                 break;
 
             case 2:
@@ -36,15 +36,15 @@ public class Shape
                 height = sc.nextInt();
                 log.info("Enter side");
                 side = sc.nextInt();
-                Perimeter();
-                Area();
+                perimeterIs();
+                areaIs();
                 break;
 
             case 3:
                 log.info("Enter radius");
                 radius = sc.nextInt();
-                Perimeter();
-                Area();
+                perimeterIs();
+                areaIs();
                 break;
 
             default:
@@ -55,7 +55,7 @@ public class Shape
 	sc.close();
     }
 
-    void Perimeter() {
+    void perimeterIs() {
         switch (shape) {
             case 1:
                 perimeter = 2 * (length + breadth);
@@ -64,12 +64,12 @@ public class Shape
 
             case 2:
                 perimeter = height + base + side;
-                log.fine("Perimeter of Triangle is {}" ,perimeter);
+                log.fine("Perimeter of Triangle is {}",perimeter);
                 break;
 
             case 3:
-                perimeter = 2 * 22 / 7 * radius;
-                log.fine("Perimeter of Circle is {} " ,perimeter);
+                perimeter = 2 * 3.14 * radius;
+                log.fine("Perimeter of Circle is {} ",perimeter);
                 break;
 		
 		default:
@@ -78,7 +78,7 @@ public class Shape
         }
     }
 
-    void Area() {
+    void areaIs() {
         switch (shape) {
             case 1:
                 area = length * breadth;
@@ -92,12 +92,12 @@ public class Shape
 
             case 3:
                 area = radius * radius;
-                log.fine("Area of Circle is {}" ,area);
+                log.fine("Area of Circle is {}",area);
                 break;
 		
-	    default:
-		log.info("Invalid"};
-		break;
+            default:
+            	log.info("Invalid");
+            	break;
         }
     }
 
