@@ -21,16 +21,10 @@ public class Shape
         ShapeName = sc.nextLine();
         switch (ShapeName) {
             case "Rectangle":
-		try{
-                	System.out.println("Enter Length");
-                	length = sc.nextInt();
-                	System.out.println("Enter Breadth");
-                	breadth = sc.nextInt();
-		   }
-		catch(InputMismatchException e)
-		{
-			log.info(e);
-		}
+                System.out.println("Enter Length");
+                length = sc.nextInt();
+                System.out.println("Enter Breadth");
+                breadth = sc.nextInt();
                 Perimeter();
                 Area();
                 break;
