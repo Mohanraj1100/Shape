@@ -37,6 +37,7 @@ public class Shape
 		break;
 
             case 2:
+		try{
                 log.info("Enter Base");
                 base = sc.nextInt();
                 log.info("Enter height");
@@ -45,13 +46,26 @@ public class Shape
                 side = sc.nextInt();
                 perimeterIs();
                 areaIs();
+		}
+		catch(InputMismatchException e)
+		{
+			log.info(String.valueOf(e));
+			System.exit(0);
+		}	
                 break;
 
             case 3:
+		try{
                 log.info("Enter radius");
                 radius = sc.nextInt();
                 perimeterIs();
                 areaIs();
+		}
+		catch(InputMismatchException e)
+		{
+			log.info(String.valueOf(e));
+			System.exit(0);
+		}
                 break;
 
             default:
