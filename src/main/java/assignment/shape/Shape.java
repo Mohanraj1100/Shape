@@ -3,48 +3,48 @@ import java.util.*;
 import java.util.logging.*;
 public class Shape
 {
-    int length;
-    int breadth;
-    int height;
-    int width;
-    int base;
-    int side;
-    int radius;
+    float length;
+    float breadth;
+    float height;
+    float width;
+    float base;
+    float side;
+    float radius;
     float perimeter;
     double area;
-    String shapename;
+    int shape;
     Logger log = Logger.getLogger("hi");
 
     Shape() {
         Scanner sc = new Scanner(System.in);
         log.info("Which shape you want to calculate from below\n1.Circle\n2.Rectangle\n3.Triangle");
-        shapename = sc.nextLine();
-        switch (shapename) {
-            case "Rectangle":
+        shape = sc.nextInt();
+        switch (shape) {
+            case 1:
                 log.info("Enter Length");
                 length = sc.nextInt();
                 log.info("Enter Breadth");
                 breadth = sc.nextInt();
-                perimeter();
-                area();
+                Perimeter();
+                Area();
                 break;
 
-            case "Triangle":
+            case 2:
                 log.info("Enter Base");
                 base = sc.nextInt();
                 log.info("Enter height");
                 height = sc.nextInt();
                 log.info("Enter side");
                 side = sc.nextInt();
-                perimeter();
-                area();
+                Perimeter();
+                Area();
                 break;
 
-            case "Circle":
+            case 3:
                 log.info("Enter radius");
                 radius = sc.nextInt();
-                perimeter();
-                area();
+                Perimeter();
+                Area();
                 break;
 
             default:
@@ -55,41 +55,49 @@ public class Shape
 	sc.close();
     }
 
-    void perimeter() {
-        switch (shapename) {
-            case "Rectangle":
+    void Perimeter() {
+        switch (shape) {
+            case 1:
                 perimeter = 2 * (length + breadth);
-                log.info("Permeter of Rectangle is" + perimeter);
+                log.fine("Permeter of Rectangle is {}" ,perimeter);
                 break;
 
-            case "Triangle":
+            case 2:
                 perimeter = height + base + side;
-                log.info("Perimeter of Triangle is" + perimeter);
+                log.fine("Perimeter of Triangle is {}" ,perimeter);
                 break;
 
-            case "Circle":
+            case 3:
                 perimeter = 2 * 22 / 7 * radius;
-                log.info("Perimeter of Circle is " + perimeter);
+                log.fine("Perimeter of Circle is {} " ,perimeter);
                 break;
+		
+		default:
+			log.info("Invalid");
+			break;
         }
     }
 
-    void area() {
-        switch (shapename) {
-            case "Rectangle":
+    void Area() {
+        switch (shape) {
+            case 1:
                 area = length * breadth;
-                log.info("Area of Rectangle" + area);
+                log.fine("Area of Rectangle is {}",area);
                 break;
 
-            case "Triangle":
+            case 2:
                 area = .5 * (base * height);
-                log.info("Area of Triangle is " + area);
+                log.fine("Area of Triangle is {} " ,area);
                 break;
 
-            case "Circle":
+            case 3:
                 area = radius * radius;
-                log.info("Area of Circle is " + area);
+                log.fine("Area of Circle is {}" ,area);
                 break;
+		
+	    default:
+		log.info("Invalid"};
+		break;
         }
     }
 
