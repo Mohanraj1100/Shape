@@ -21,6 +21,7 @@ public class Shape
         choice = sc.nextInt();
         switch (choice) {
             case 1:
+		try{
                 log.info("Enter Length");
                 length = sc.nextInt();
                 log.info("Enter Breadth");
@@ -28,6 +29,12 @@ public class Shape
                 perimeterIs();
                 areaIs();
                 break;
+		}
+		catch(InputMismatchException e)
+		{
+			log.info(String.valueOf(e));
+			System.exit(0);
+		}
 
             case 2:
                 log.info("Enter Base");
@@ -103,7 +110,7 @@ public class Shape
 	
     void display()
     {
-	    log.info("Hence area andn perimeter has been calculated");
+	    log.info("Hence area and perimeter has been calculated");
     }
 
     public static void main(String[] args) {
