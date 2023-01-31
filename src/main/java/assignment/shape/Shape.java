@@ -21,7 +21,7 @@ public class Shape
         shapename = sc.nextLine();
         switch (shapename) {
             case "Rectangle":
-               log.info("Enter Length");
+                log.info("Enter Length");
                 length = sc.nextInt();
                 log.info("Enter Breadth");
                 breadth = sc.nextInt();
@@ -88,7 +88,7 @@ public class Shape
 
             case "Circle":
                 area = radius * radius;
-                log,info("Area of Circle is " + area);
+                log.info("Area of Circle is " + area);
                 break;
         }
     }
