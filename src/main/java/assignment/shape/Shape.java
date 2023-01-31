@@ -16,16 +16,21 @@ public class Shape
     String ShapeName;
 
     Shape() {
-	try{
         Scanner sc = new Scanner(System.in);
         System.out.println("Which shape you want to calculate from below\n1.Circle\n2.Rectangle\n3.Triangle");
         ShapeName = sc.nextLine();
         switch (ShapeName) {
             case "Rectangle":
-                System.out.println("Enter Length");
-                length = sc.nextInt();
-                System.out.println("Enter Breadth");
-                breadth = sc.nextInt();
+		try{
+                	System.out.println("Enter Length");
+                	length = sc.nextInt();
+                	System.out.println("Enter Breadth");
+                	breadth = sc.nextInt();
+		   }
+		catch(InputMismatchException e)
+		{
+			log.info(e);
+		}
                 Perimeter();
                 Area();
                 break;
@@ -54,15 +59,7 @@ public class Shape
 
         }
 	sc.close();
-	    }
-	    catch(InputMismatchException e)
-	    {
-		    log.info(String.valueOf(e));
-		    System.exit(0);
-	    }
-	    
-
-    }
+	   }
 
     void Perimeter() {
         switch (ShapeName) {
