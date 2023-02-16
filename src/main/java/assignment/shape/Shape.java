@@ -12,8 +12,8 @@ public class Shape
     float radius;
     float perimeter;
     float area;
-    float pie=22/7;
-    float half=1/2;	
+    float pie=3.14;
+    float half=0.5;	
     int choice;
     Logger log = Logger.getLogger("hi");
 
