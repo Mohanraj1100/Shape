@@ -12,6 +12,8 @@ public class Shape
     float radius;
     float perimeter;
     float area;
+    float pie=22/7;
+    float half=1/2;	
     int choice;
     Logger log = Logger.getLogger("hi");
 
@@ -69,7 +71,7 @@ public class Shape
                 break;
 
             case 3:
-                perimeter = 2 * 22/7 * radius;
+                perimeter = 2 * pie * radius;
                 log.log(Level.INFO,()->"Permeter of Circle is" +perimeter);
                 break;
 		
@@ -87,7 +89,7 @@ public class Shape
                 break;
 
             case 2:
-                area = 1/2 * (base * height);
+                area = half * (base * height);
                 log.log(Level.INFO,()->"Area of Triangle is"+area);
                 break;
 
