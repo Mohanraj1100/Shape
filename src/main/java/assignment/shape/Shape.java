@@ -59,17 +59,18 @@ public class Shape
         switch (choice) {
             case 1:
                 perimeter = 2 * (length + breadth);
-                log.fine("Permeter of Rectangle is {}" ,perimeter);
+                log.log(Level.INFO,()->"Permeter of Rectangle is" +perimeter);
                 break;
 
             case 2:
                 perimeter = height + base + side;
-                log.fine("Perimeter of Triangle is {}",perimeter);
+                log.log(Level.INFO,()->"Permeter of Triangle is" +perimeter);
+                
                 break;
 
             case 3:
-                perimeter = 2 * 3.14 * radius;
-                log.fine("Perimeter of Circle is {} ",perimeter);
+                perimeter = 2 * 22/7 * radius;
+                log.log(Level.INFO,()->"Permeter of Circle is" +perimeter);
                 break;
 		
 		default:
@@ -82,17 +83,17 @@ public class Shape
         switch (choice) {
             case 1:
                 area = length * breadth;
-                log.fine("Area of Rectangle is {}",area);
+                log.log(Level.INFO,()->"Area of Rectangle is"+area);
                 break;
 
             case 2:
-                area = .5 * (base * height);
-                log.fine("Area of Triangle is {} " ,area);
+                area = 1/2 * (base * height);
+                log.log(Level.INFO,()->"Area of Triangle is"+area);
                 break;
 
             case 3:
                 area = radius * radius;
-                log.fine("Area of Circle is {}",area);
+                log.log(Level.INFO,()->"Area of Circle is"+area);
                 break;
 		
             default:
@@ -103,7 +104,7 @@ public class Shape
 	
     void display()
     {
-	    log.info("Hence area and perimeter has been calculated");
+	    log.info(" Area and Perimeter has been calculated for the Particular Shape");
     }
 
     public static void main(String[] args) {
