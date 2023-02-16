@@ -3,17 +3,17 @@ import java.util.*;
 import java.util.logging.*;
 public class Shape
 {
-    float length;
-    float breadth;
-    float height;
-    float width;
-    float base;
-    float side;
-    float radius;
-    float perimeter;
-    float area;
-    float pie=3.14;
-    float half=0.5;	
+    double length;
+    double breadth;
+    double height;
+    double width;
+    double base;
+    double side;
+    double radius;
+    double perimeter;
+    double area;
+    double pie=3.14;
+    double half=0.5;	
     int choice;
     Logger log = Logger.getLogger("hi");
 
