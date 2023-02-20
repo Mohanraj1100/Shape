@@ -3,7 +3,19 @@ import java.util.*;
 import java.util.logging.*;
 public class Shape
 {
-    double length;
+    public static void main(String[] args) {
+    	int choice;
+        Logger log = Logger.getLogger("hi");
+        Scanner inputobj = new Scanner(System.in);
+        log.info("Which shape you want to calculate from below\n1.Rectangle\n2.Triangle\n3.Circle");
+        choice = inputobj.nextInt();
+        ShapeCalculation sc = new ShapeCalculation(choice);
+        sc.perimeterIs();
+        sc.areaIs();
+    }
+}
+class ShapeCalculation{
+	double length;
     double breadth;
     double height;
     double width;
@@ -13,50 +25,42 @@ public class Shape
     double perimeter;
     double area;
     double pie=3.14;
-    double half=0.5;	
+    double half=0.5;
     int choice;
     Logger log = Logger.getLogger("hi");
+    Scanner inputobj = new Scanner(System.in);
+    ShapeCalculation(int choice){
+    	this.choice = choice;
+    	switch (choice) {
+        case 1:
+            log.info("Enter Length");
+            length = inputobj.nextInt();
+            log.info("Enter Breadth");
+            breadth = inputobj.nextInt();
+            break;
 
-    Shape() {
-        Scanner sc = new Scanner(System.in);
-        log.info("Which shape you want to calculate from below\n1.Rectangle\n2.Triangle\n3.Circle");
-        choice = sc.nextInt();
-        switch (choice) {
-            case 1:
-                log.info("Enter Length");
-                length = sc.nextInt();
-                log.info("Enter Breadth");
-                breadth = sc.nextInt();
-                perimeterIs();
-                areaIs();
-		break;
+        case 2:
+            log.info("Enter Base");
+            base = inputobj.nextInt();
+            log.info("Enter height");
+            height = inputobj.nextInt();
+            log.info("Enter side");
+            side = inputobj.nextInt();
+            break;
 
-            case 2:
-                log.info("Enter Base");
-                base = sc.nextInt();
-                log.info("Enter height");
-                height = sc.nextInt();
-                log.info("Enter side");
-                side = sc.nextInt();
-                perimeterIs();
-                areaIs();
-                break;
+        case 3:
+            log.info("Enter radius");
+            radius = inputobj.nextInt();
+            break;
 
-            case 3:
-                log.info("Enter radius");
-                radius = sc.nextInt();
-                perimeterIs();
-                areaIs();
-                break;
+        default:
+            log.info("You have entered invalid shapename ");
+            break;
 
-            default:
-                log.info("Entered invalid shape");
-                break;
-
-        }
-	sc.close();
     }
-
+    	
+    }
+    
     void perimeterIs() {
         switch (choice) {
             case 1:
@@ -102,16 +106,5 @@ public class Shape
             	log.info("Invalid");
             	break;
         }
-    }
-	
-    void display()
-    {
-	    log.info(" Area and Perimeter has been calculated for the Particular Shape");
-    }
-
-    public static void main(String[] args) {
-        Shape in = new Shape();
-	in.display();
-
     }
 }
